@@ -1,0 +1,20 @@
+<h2>Weather Forecast</h2>
+
+<button (click)="fetchWeatherForecast()">Fetch Weather Forecast</button>
+
+<div *ngIf="weatherForecasts.length > 0">
+  <h3>Forecast:</h3>
+  <ul>
+    <li *ngFor="let forecast of weatherForecasts">
+      <p>Date: {{ forecast.date | date }}</p>
+      <p>Temperature: {{ forecast.temperatureC }}°C</p>
+      <p>Summary: {{ forecast.summary }}</p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="weatherForecasts.length === 0">
+  <p>No weather forecast available</p>
+</div>
+
+<div>{{ message }}</div>

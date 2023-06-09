@@ -1,0 +1,43 @@
+<form (ngSubmit)="register()" class="needs-validation" novalidate>
+  <div class="mb-3">
+    <label for="username" class="form-label">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      class="form-control"
+      [(ngModel)]="registerModel.username"
+      required
+    />
+    <div class="invalid-feedback">Please enter a username.</div>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="form-control"
+      [(ngModel)]="registerModel.email"
+      required
+      email
+    />
+    <div class="invalid-feedback">Please enter a valid email.</div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      [(ngModel)]="registerModel.password"
+      required
+      minlength="6"
+    />
+    <div class="invalid-feedback">
+      Please enter a password with at least 6 characters.
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
