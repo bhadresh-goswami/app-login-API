@@ -15,7 +15,7 @@ export class UserRegistrationComponent {
     username: '',
     password: '',
     email: '',
-    role: 'User',
+    roles: 'User',
   };
   constructor(private authService: AuthenticationService) {}
 

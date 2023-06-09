@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row" *ngIf="IsCardShow">
+  <div class="row" *ngIf="!IsCardShow">
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
@@ -37,7 +37,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6" *ngIf="!IsCardShow"></div>
+    <div class="col-md-6" *ngIf="IsCardShow"></div>
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
@@ -46,7 +46,7 @@
             <button
               class="btn btn-primary"
               (click)="LogOut()"
-              *ngIf="!IsCardShow"
+              *ngIf="IsCardShow"
             >
               Log Out
             </button>

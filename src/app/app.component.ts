@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(private authService: AuthenticationService) {}
   ngOnInit(): void {
     this.token = this.authService.getAccessToken();
-    this.IsCardShow = this.token == null ? true : false;
+    this.IsCardShow = this.token != null ? true : false;
   }
 
   LogOut() {

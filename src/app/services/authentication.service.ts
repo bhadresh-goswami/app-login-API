@@ -13,6 +13,7 @@ export class AuthenticationService {
 
   register(registerModel: any) {
     console.log(`${this.baseUrl}/register`);
+    console.log(`registerModel: ${JSON.stringify(registerModel)}`);
 
     return this.http.post(`${this.baseUrl}/register`, registerModel);
   }

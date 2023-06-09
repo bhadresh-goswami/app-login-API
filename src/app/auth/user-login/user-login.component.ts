@@ -18,6 +18,7 @@ export class UserLoginComponent {
   loginModel: LoginModel = {
     username: '',
     password: '',
+    //email: '',
   };
 
   constructor(
@@ -28,7 +29,7 @@ export class UserLoginComponent {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required, Validators.minLength(6)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
 
@@ -55,6 +56,8 @@ export class UserLoginComponent {
     console.log('called');
 
     this.loginModel = this.loginForm!.value;
+    console.log(this.loginModel);
+
     this.authService.login(this.loginModel).subscribe(
       () => {
         console.log('Login successful');
